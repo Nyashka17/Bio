@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: black; /* Цвет фона */
+}
+
+.menu {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0; /* Устанавливаем меню в верхней части */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translateX(-50%); /* Центрируем по горизонтали */
+    width: 100%; /* Ширина меню */
+    height: 110px; /* Высота меню */
+    background-color: black; /* Цвет фона меню */
+    border-radius: 0 0 30px 30px; /* Закругление углов снизу */
+    display: flex; /* Flex для размещения элементов внутри меню */
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: center; /* Центрирование по горизонтали */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень для меню */
+    z-index: 1; /* Убедитесь, что меню выше других элементов */
+    transition: height 0.3s, opacity 0.3s; /* Плавный переход для высоты и прозрачности */
+}
+
+.circle-container {
+    display: flex; /* Используем flexbox для размещения элементов в ряд */
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    align-items: center; /* Центрируем содержимое по вертикали */
+    gap: 25px; /* Отступ между иконками */
+}
+
+.list {
+    display: flex; /* Flex для центрирования иконки */
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+}
+
+.icon, .icon-home {
+    width: 80px; /* Ширина круга */
+    height: 80px; /* Высота круга */
+    background-color: red; /* Начальный цвет круга */
+    border-radius: 50%; /* Закругление углов для создания круга */
+    display: flex; /* Flex для центрирования иконки */
+    align-items: center; /* Центрирование по вертикали */
+    justify-content: center; /* Центрирование по горизонтали */
+    animation: backgroundColorChange 2s infinite; /* Анимация цвета */
+    transition: transform 0.2s; /* Плавный переход для анимации */
+}
+
+@keyframes backgroundColorChange {
+    0% {
+        background-color: red; /* Начальный цвет */
+    }
+    100% {
+        background-color: blue; /* Конечный цвет */
+    }
+}
+
+.icon-home ion-icon, .icon ion-icon {
+    font-size: 170%; /* Размер иконки */
+    color: white; /* Цвет иконки */
+    transition: transform 0.2s; /* Плавный переход для иконок */
+}
+
+h1 {
+    position: absolute; /* Позиционируем заголовок */
+    top: 10px; /* Расположение сверху (отступ) */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translateX(-50%); /* Центрируем по горизонтали */
+    font-size: 225%;
+    font-weight: 190px;
+    background: white;
+    border-radius: 30%;
+    width: 110px; /* Ширина лого */
+    height: 75px; /* Высота лого */
+    display: flex; /* Используем flexbox для центрирования текста */
+    align-items: center; /* Центрируем по вертикали */
+    justify-content: center; /* Центрируем по горизонтали */
+    margin: 100px auto; /* Отступы сверху и снизу (можете настроить) */
+}
+
+#toggle-button {
+    cursor: pointer; /* Курсор при наведении */
+    margin-left: 5px; /* Отступ слева от текста "Info" */
+    transition: opacity 0.3s; /* Плавный переход для изменения прозрачности */
+}
+
+.custom-window {
+    display: none; /* Скрыто по умолчанию */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 50%; /* Положение по вертикали */
+    left: 50%; /* Положение по горизонтали */
+    transform: translate(-50%, -50%); /* Центрируем окно */
+    background-color: black; /* Фон окна */
+    border-radius: 15px; /* Закругление углов */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Тень для окна */
+    width: 300px; /* Ширина окна */
+    text-align: center; /* Центрируем текст */
+    z-index: 2; /* Убедитесь, что окно выше других элементов */
+}
+
+.frame-top, .frame-bottom {
+    width: 100%; /* Ширина рамок */
+    border-radius: 15px 15px 0 0; /* Закругление верхней рамки */
+}
+
+.text-container {
+    padding: 20px; /* Отступы для текста */
+}
+
+.text-container h2 {
+    color: white; /* Цвет заголовка */
+    margin: 10px 0; /* Отступы вокруг заголовка */
+}
+
+.text-container p {
+    color: white; /* Цвет текста */
+    text-align: center; /* Центрируем текст */
+}
+
+/* Анимация нажатия */
+.list:active .icon,
+.list:active .icon-home {
+    transform: scale(1.2); /* Увеличение размера круга и иконки */
+}
+
+.list:active ion-icon {
+    transform: scale(1.2); /* Увеличение размера иконки */
+}
